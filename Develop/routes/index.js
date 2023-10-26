@@ -1,11 +1,14 @@
 // Start of JS file
-// Hosts the routes from other .js files.
+// Retrieves info from other .js files.
 const express = require('express');
-// const <name>Router = require('./<js file>);
+const htmlRouter = require('./html');
+const apiRouter = require('./api');
 
+// Route handling functions.
 const app = express();
+app.use('/html', htmlRouter);
+app.use('/api', apiRouter);
 
-// app.use('./<js file>', <name>Router);
-
+// Exports app.
 module.exports = app;
 // End of JS file
