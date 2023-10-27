@@ -3,7 +3,6 @@
 const express = require('express');
 //const path = require('path');
 const { clog } = require('./helpers/clog');
-//const main = require('./routes/index');
 const html = require('./routes/html');
 const api = require('./routes/api');
 
