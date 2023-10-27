@@ -15,7 +15,7 @@ app.use(clog);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Using the html/api routes.
 app.use(html);
