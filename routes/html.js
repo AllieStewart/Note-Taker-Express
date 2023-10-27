@@ -3,11 +3,6 @@
 const html = require('express').Router();
 const path = require('path');
 
-// // GET Route for homepage
-// html.get('/', (req, res) =>
-//   res.sendFile(path.join(__dirname, '../public/index.html'))
-// );
-
 // GET /notes should return the notes.html file.
 html.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '../public/notes.html'))
