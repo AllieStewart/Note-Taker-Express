@@ -1,12 +1,12 @@
 [
     {
-        "title": "Hello",
-        "text": "Howdy",
-        "id": "f42h"
+        "title": "This is a test.",
+        "text": "Hello, testing testing",
+        "id": "t532"
     },
     {
-        "title": "Welcome to my notes",
-        "text": "Wahooo",
-        "id": "f341"
+        "title": "Adding a note",
+        "text": "La de da",
+        "id": "c8d3"
     }
 ]
