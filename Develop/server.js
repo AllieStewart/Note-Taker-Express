@@ -11,16 +11,16 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+// Middleware for console log testing.
 app.use(clog);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+// Using the html/api routes.
 app.use(html);
 app.use(api);
-
-// app.use('/api', main);
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)

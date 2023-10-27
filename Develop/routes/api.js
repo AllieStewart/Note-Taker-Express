@@ -7,7 +7,6 @@ const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 //GET /api/notes should read the db.json file 
 // and return all saved notes as JSON.
 api.get('/api/notes', (req, res) =>
-    //res.sendFile(path.join(__dirname, '../db/db.json'))
     readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)))
 ); 
 
@@ -32,7 +31,7 @@ api.post('/api/notes', (req, res) =>
             id: uuid(),
         };
 
-        readAndAppend(newNote, '../db/db.json');
+        readAndAppend(newNote, './db/db.json');
 
         const response = {
             status: 'success',
@@ -46,6 +45,18 @@ api.post('/api/notes', (req, res) =>
     {
         res.json('Error in posting note.');
     }
+});
+
+api.delete('/api/notes/:id', (req, res) => {
+    const notesId = req.params.id;
+    readFromFile('../db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => 
+    {
+        const result = json.filter((text) => text.id != notesId);
+        writeToFile('../db/db.json', result);
+        res.json(`Item ${id} has been deleted 🗑️`);
+    })
 });
 
 module.exports = api;
