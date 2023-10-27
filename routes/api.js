@@ -48,17 +48,17 @@ api.post('/api/notes', (req, res) =>
 });
 
 // DELETE route for note
-api.delete('/api/notes/:id', (req, res) => {
-    const notesId = req.params.id;
-    readFromFile('./db/db.json')
-    .then((data) => JSON.parse(data))
-    .then((json) => 
-    {
-        const result = json.filter((text) => text.id != notesId);
-        writeToFile('./db/db.json', result);
-        res.json(`Item ${id} has been deleted 🗑️`);
-    })
-});
+// api.delete('/api/notes/:id', (req, res) => {
+//     const notesId = req.params.id;
+//     readFromFile('./db/db.json')
+//     .then((data) => JSON.parse(data))
+//     .then((json) => 
+//     {
+//         const result = json.filter((text) => text.id != notesId);
+//         writeToFile('./db/db.json', result);
+//         res.json(`Item ${id} has been deleted 🗑️`);
+//     })
+// });
 
 module.exports = api;
 // End of JS file

@@ -6,7 +6,7 @@ const { clog } = require('./helpers/clog');
 const html = require('./routes/html');
 const api = require('./routes/api');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3006;
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(clog);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('public'));
 
 // Using the html/api routes.
 app.use(html);
