@@ -2,14 +2,12 @@
 // Data for api
 const api = require('express').Router();
 const uuid = require('../helpers/uuid');
-const path = require('path');
 const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 
 // GET /api/notes should read the db.json file 
 // and return all saved notes as JSON.
 api.get('/api/notes', (req, res) =>
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)))
-    //res.sendFile(path.join(__dirname, '../db/db.json'))
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 ); 
 
 // POST /api/notes should receive a new note to save on 
@@ -52,12 +50,12 @@ api.post('/api/notes', (req, res) =>
 // DELETE route for note
 api.delete('/api/notes/:id', (req, res) => {
     const notesId = req.params.id;
-    readFromFile('../db/db.json')
+    readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => 
     {
         const result = json.filter((text) => text.id != notesId);
-        writeToFile('../db/db.json', result);
+        writeToFile('./db/db.json', result);
         res.json(`Item ${id} has been deleted 🗑️`);
     })
 });

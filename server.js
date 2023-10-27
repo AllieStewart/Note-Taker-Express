@@ -6,7 +6,7 @@ const { clog } = require('./helpers/clog');
 const html = require('./routes/html');
 const api = require('./routes/api');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
