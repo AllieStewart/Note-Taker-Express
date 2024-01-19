@@ -44,7 +44,7 @@ an open note form. Saved notes can also be clicked on to display information. </
 
 ## Usage
 Simply click on the link and watch the magic happen. </br>  
-Link to the website: https://note-taker-express-ajs-3539f0205c88.herokuapp.com </br>
+Link to the website: OFFLINE </br>
 
 ## What I Have Learned
 I learned a lot about connecting back-end functionality to the front-end. </br>
